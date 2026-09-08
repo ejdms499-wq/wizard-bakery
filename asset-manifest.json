@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/wizard-bakery/static/css/main.de6017f1.css",
-    "main.js": "/wizard-bakery/static/js/main.181cc461.js",
+    "main.js": "/wizard-bakery/static/js/main.737dcd99.js",
     "index.html": "/wizard-bakery/index.html",
     "main.de6017f1.css.map": "/wizard-bakery/static/css/main.de6017f1.css.map",
-    "main.181cc461.js.map": "/wizard-bakery/static/js/main.181cc461.js.map"
+    "main.737dcd99.js.map": "/wizard-bakery/static/js/main.737dcd99.js.map"
   },
   "entrypoints": [
     "static/css/main.de6017f1.css",
-    "static/js/main.181cc461.js"
+    "static/js/main.737dcd99.js"
   ]
 }
