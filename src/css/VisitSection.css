@@ -1,0 +1,151 @@
+.visit-section {
+  width: 100%;
+  padding: 88px 0 92px;
+
+  background: #0d0a18;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.visit-section * {
+  box-sizing: border-box;
+}
+
+.visit-inner {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+
+  align-items: center;
+  gap: 135px;
+}
+
+.visit-eyebrow {
+  margin: 0 0 19px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+
+  color: #a96d37;
+}
+
+.visit-open {
+  margin: 0 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 6px;
+  letter-spacing: 0.16em;
+
+  color: rgba(245, 239, 231, 0.34);
+}
+
+.visit-open span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #b9793d;
+
+  box-shadow: 0 0 8px rgba(185, 121, 61, 0.42);
+}
+
+.visit-left h2 {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.05em;
+
+  color: rgba(247, 241, 234, 0.92);
+}
+
+.visit-copy {
+  margin: 18px 0 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 9px;
+  line-height: 1.8;
+
+  color: rgba(237, 230, 222, 0.26);
+}
+
+.visit-right {
+  border-top: 1px solid rgba(255, 255, 255, 0.085);
+}
+
+.visit-info-row {
+  min-height: 62px;
+  padding: 15px 0;
+
+  display: grid;
+  grid-template-columns: 115px 1fr;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.065);
+}
+
+.visit-info-label {
+  font-family: "Inter", sans-serif;
+  font-size: 6px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+
+  color: #9f6734;
+}
+
+.visit-info-row p {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 9px;
+  line-height: 1.7;
+
+  color: rgba(239, 232, 225, 0.42);
+}
+
+.visit-more {
+  width: 100%;
+
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.085);
+
+  background: transparent;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 8px;
+
+  color: rgba(245, 239, 231, 0.45);
+
+  cursor: pointer;
+}
+
+.visit-more:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 800px) {
+  .visit-inner {
+    width: calc(100% - 40px);
+
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+}

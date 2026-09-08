@@ -1,0 +1,898 @@
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 104px 24px 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #0c0917;
+
+  color: #f4eee3;
+}
+
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.hero-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+
+/* 중앙 보랏빛 */
+
+.hero-center-light {
+  position: absolute;
+
+  left: 50%;
+  top: 42%;
+
+  width: 1050px;
+  height: 740px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(61, 49, 82, 0.28) 0%,
+      rgba(37, 28, 56, 0.14) 45%,
+      rgba(22, 17, 37, 0.05) 63%,
+      transparent 76%
+    );
+
+  filter: blur(38px);
+}
+
+
+/* ==================================================
+   FOG VIDEO
+================================================== */
+
+.fog-video-wrap {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 60%;
+
+  overflow: hidden;
+
+  opacity: 0.7;
+
+  mix-blend-mode: screen;
+
+  filter:
+    grayscale(1)
+    contrast(0.92)
+    brightness(1.05)
+    blur(1.2px);
+
+  animation:
+    fogBreath
+    9s
+    ease-in-out
+    infinite,
+    fogDrift
+    26s
+    ease-in-out
+    infinite;
+}
+
+
+/* LEFT - 좌측 하단 코너에서 스며나오는 형태 */
+
+.fog-video-left {
+  left: 0;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 26%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.18) 62%,
+      transparent 80%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 26%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.18) 62%,
+      transparent 80%
+    );
+}
+
+
+/* RIGHT - 우측 상단 코너에서 스며나오는 형태 */
+
+.fog-video-right {
+  right: 0;
+
+  animation-delay: -4.5s, -13s;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 26%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.18) 62%,
+      transparent 80%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.9) 26%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.18) 62%,
+      transparent 80%
+    );
+}
+
+
+/* 실제 영상 */
+
+.fog-video {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 145%;
+  height: 120%;
+
+  object-fit: cover;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.08);
+}
+
+
+/* 오른쪽은 좌우반전 */
+
+.fog-video-mirror {
+  transform:
+    translate(-50%, -50%)
+    scaleX(-1)
+    scale(1.08);
+}
+
+
+/* ==================================================
+   STAR
+================================================== */
+
+.hero-star {
+  position: absolute;
+
+  color: rgba(211, 151, 70, 0.72);
+
+  text-shadow:
+    0 0 12px
+    rgba(211, 151, 70, 0.38);
+
+  animation:
+    starPulse
+    4.5s
+    ease-in-out
+    infinite;
+}
+
+
+.hero-star-01 {
+  left: 19%;
+  top: 31%;
+
+  font-size: 7px;
+}
+
+
+.hero-star-02 {
+  right: 18%;
+  bottom: 25%;
+
+  font-size: 6px;
+
+  animation-delay: -2s;
+}
+
+
+.hero-star-03 {
+  right: 29%;
+  top: 27%;
+
+  font-size: 10px;
+
+  animation-delay: -3s;
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* ==================================================
+   EYEBROW
+================================================== */
+
+.hero-eyebrow {
+  margin: 0 0 12px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.34em;
+
+  color: #d3944c;
+}
+
+.hero-visitor-count {
+  margin: 0 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+
+  color: rgba(241, 234, 223, 0.32);
+}
+
+.hero-visitor-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #6fbf7a;
+
+  box-shadow: 0 0 6px rgba(111, 191, 122, 0.6);
+
+  animation: heroVisitorPulse 2s ease-in-out infinite;
+}
+
+@keyframes heroVisitorPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+/* ==================================================
+   EMBLEM
+================================================== */
+
+.hero-emblem-wrap {
+  width: 172px;
+  height: 172px;
+
+  margin: 0 auto 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+.hero-emblem {
+  display: block;
+
+  width: 154px;
+  height: 154px;
+
+  object-fit: contain;
+
+  overflow: visible;
+
+  filter:
+    saturate(0.70)
+    brightness(0.92)
+    contrast(1.03)
+    drop-shadow(
+      0 8px 18px
+      rgba(0, 0, 0, 0.16)
+    );
+}
+
+
+/* ==================================================
+   ENGLISH TITLE
+================================================== */
+
+.hero-title {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 48px;
+
+  font-weight: 500;
+
+  line-height: 0.96;
+
+  letter-spacing: 0.075em;
+
+  color: #f1eadf;
+}
+
+
+/* ==================================================
+   KOREAN LOGO
+
+   여기부터 한글은 SUIT
+================================================== */
+
+.hero-korean {
+  margin: 15px 0 0;
+
+  font-family:
+    "SUIT",
+    "Pretendard",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.24em;
+
+  color: rgba(241, 234, 223, 0.84);
+
+  transform: translateX(0.12em);
+}
+
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.hero-decoration {
+  width: 128px;
+
+  margin: 15px auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+}
+
+
+.hero-decoration span {
+  width: 40px;
+  height: 1px;
+
+  background:
+    rgba(241, 234, 223, 0.32);
+}
+
+
+.hero-decoration b {
+  font-size: 6px;
+
+  font-weight: normal;
+
+  color: #d99b52;
+}
+
+
+/* ==================================================
+   TAGLINE
+================================================== */
+
+.hero-tagline {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.38em;
+
+  color: rgba(241, 234, 223, 0.68);
+
+  transform: translateX(0.19em);
+}
+
+
+/* ==================================================
+   CORE COPY
+
+   핵심 문구는 마루부리
+================================================== */
+
+.hero-copy {
+  margin-top: 40px;
+}
+
+
+.hero-copy p {
+  word-break: keep-all;
+}
+
+
+.hero-copy-main {
+  margin: 0;
+
+  font-family:
+    "MaruBuri",
+    "MaruBuri-Regular",
+    serif;
+
+  font-size: 19px;
+
+  font-weight: 400;
+
+  line-height: 1.55;
+
+  letter-spacing: -0.03em;
+
+  color: rgba(244, 238, 228, 0.92);
+}
+
+
+.hero-copy-sub {
+  margin: 8px 0 0;
+
+  font-family:
+    "SUIT",
+    "Pretendard",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+
+  letter-spacing: -0.02em;
+
+  color: rgba(241, 234, 223, 0.43);
+}
+
+
+/* ==================================================
+   MANAGER NOTE
+================================================== */
+
+.hero-manager {
+  width: 500px;
+
+  max-width: 82%;
+
+  margin: 27px auto 0;
+
+  padding-top: 17px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  border-top:
+    1px solid
+    rgba(241, 234, 223, 0.18);
+}
+
+
+.hero-manager-label {
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.20em;
+
+  color: #d3944c;
+}
+
+
+.hero-manager-divider {
+  width: 1px;
+  height: 12px;
+
+  background:
+    rgba(241, 234, 223, 0.32);
+}
+
+
+.hero-manager-text {
+  font-family:
+    "SUIT",
+    "Pretendard",
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 300;
+
+  letter-spacing: -0.015em;
+
+  color: rgba(241, 234, 223, 0.32);
+}
+
+
+/* ==================================================
+   CTA
+================================================== */
+
+.hero-cta-area {
+  width: 100%;
+
+  margin-top: 28px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+.hero-cta {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  padding:
+    8px
+    13px
+    11px;
+
+  font-family:
+    "SUIT",
+    "Pretendard",
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: rgba(241, 234, 223, 0.88);
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.hero-cta::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 166px;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    rgba(241, 234, 223, 0.42);
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.hero-cta:hover {
+  color: #dca15a;
+}
+
+
+.hero-cta:hover::after {
+  width: 184px;
+
+  background: #c8873c;
+}
+
+
+.hero-cta-arrow {
+  font-size: 17px;
+
+  transform: translateY(-1px);
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.hero-cta:hover .hero-cta-arrow {
+  transform:
+    translate(4px, -1px);
+}
+
+
+/* ==================================================
+   SCROLL
+================================================== */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 16px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+
+  font-family:
+    "Inter",
+    sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 0.24em;
+
+  color:
+    rgba(241, 234, 223, 0.24);
+}
+
+
+.hero-scroll-bar {
+  width: 1px;
+  height: 29px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(241, 234, 223, 0.40),
+      transparent
+    );
+}
+
+
+/* ==================================================
+   ANIMATION
+================================================== */
+
+@keyframes fogBreath {
+
+  0% {
+    opacity: 0.25;
+
+    transform:
+      scale(1);
+  }
+
+
+  25% {
+    opacity: 0.5;
+  }
+
+
+  48% {
+    opacity: 0.8;
+
+    transform:
+      scale(1.035);
+  }
+
+
+  65% {
+    opacity: 0.88;
+  }
+
+
+  83% {
+    opacity: 0.45;
+
+    transform:
+      scale(1.02);
+  }
+
+
+  100% {
+    opacity: 0.25;
+
+    transform:
+      scale(1);
+  }
+}
+
+
+@keyframes fogDrift {
+
+  0% {
+    transform: translate(0, 0);
+  }
+
+  33% {
+    transform: translate(2.5%, -1.5%);
+  }
+
+  66% {
+    transform: translate(-1.5%, 2%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes starPulse {
+
+  0%,
+  100% {
+    opacity: 0.22;
+
+    transform:
+      scale(0.90);
+  }
+
+
+  50% {
+    opacity: 1;
+
+    transform:
+      scale(1.08);
+  }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media screen and (max-width: 760px) {
+
+  .hero {
+    padding:
+      102px
+      20px
+      75px;
+  }
+
+
+  .fog-video-wrap {
+    width: 70%;
+
+    opacity: 0.6;
+  }
+
+
+  .hero-emblem-wrap {
+    width: 138px;
+    height: 138px;
+  }
+
+
+  .hero-emblem {
+    width: 124px;
+    height: 124px;
+  }
+
+
+  .hero-title {
+    font-size: 33px;
+
+    letter-spacing: 0.06em;
+  }
+
+
+  .hero-korean {
+    font-size: 13px;
+
+    letter-spacing: 0.18em;
+  }
+
+
+  /* 모바일에서는 하단 별 장식이 스크롤 영역과 겹쳐 붕 떠 보여서 숨김 */
+  .hero-star-02 {
+    display: none;
+  }
+
+
+  .hero-tagline {
+    font-size: 8px;
+
+    letter-spacing: 0.27em;
+  }
+
+
+  .hero-copy-main {
+    font-size: 16px;
+  }
+
+
+  .hero-copy-sub {
+    font-size: 10px;
+  }
+
+
+  .hero-manager {
+    width: 340px;
+
+    flex-wrap: wrap;
+
+    gap:
+      7px
+      11px;
+  }
+
+}

@@ -1,0 +1,218 @@
+.wish-list {
+  width: 100%;
+  min-height: 100vh;
+  padding: 135px 0 125px;
+
+  background: #0c0917;
+
+  box-sizing: border-box;
+}
+
+.wish-list * {
+  box-sizing: border-box;
+}
+
+.wish-list-inner {
+  width: min(1080px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.wish-list-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wish-list-eyebrow {
+  margin: 0 0 16px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+
+  color: #b9793d;
+}
+
+.wish-list-title {
+  margin: 0 0 14px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+
+  color: rgba(246, 240, 233, 0.94);
+}
+
+.wish-list-intro {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+
+  color: rgba(238, 232, 224, 0.32);
+}
+
+/* EMPTY */
+
+.wish-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  padding: 90px 0;
+
+  text-align: center;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+
+  color: rgba(238, 232, 224, 0.4);
+}
+
+.wish-list-empty-link {
+  padding: 10px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: rgba(238, 232, 224, 0.7);
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+/* GRID */
+
+.wish-list-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.wish-list-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.wish-list-card-image {
+  display: block;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #17131f;
+}
+
+.wish-list-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.wish-list-card:hover .wish-list-card-image img {
+  transform: scale(1.05);
+}
+
+.wish-list-card-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+
+  color: rgba(238, 232, 224, 0.25);
+}
+
+.wish-list-card-text {
+  padding-top: 14px;
+}
+
+.wish-list-card-text a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wish-list-card-en {
+  margin: 0 0 4px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+
+  color: rgba(238, 232, 224, 0.3);
+}
+
+.wish-list-card-text h3 {
+  margin: 0 0 10px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.85);
+}
+
+.wish-list-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wish-list-card-bottom span {
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+
+  color: rgba(238, 232, 224, 0.5);
+}
+
+.wish-list-card-bottom button {
+  all: unset;
+  cursor: pointer;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+
+  color: rgba(192, 82, 79, 0.6);
+}
+
+.wish-list-card-bottom button:hover {
+  color: rgba(192, 82, 79, 0.9);
+}
+
+@media (max-width: 860px) {
+  .wish-list {
+    padding: 110px 0 90px;
+  }
+
+  .wish-list-inner {
+    width: calc(100% - 40px);
+  }
+
+  .wish-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

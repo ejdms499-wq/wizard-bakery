@@ -1,0 +1,108 @@
+.global-fog {
+  position: fixed;
+  inset: 0;
+
+  z-index: 30;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+}
+
+.global-fog-blob {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(140px);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 35%,
+      transparent 65%
+    );
+
+  will-change: transform;
+}
+
+.global-fog-blob-1 {
+  width: 620px;
+  height: 620px;
+
+  left: -15%;
+  top: -18%;
+
+  animation: globalFogDriftA 90s ease-in-out infinite;
+}
+
+.global-fog-blob-2 {
+  width: 540px;
+  height: 540px;
+
+  right: -18%;
+  top: 40%;
+
+  animation: globalFogDriftB 105s ease-in-out infinite;
+  animation-delay: -25s;
+}
+
+.global-fog-blob-3 {
+  width: 480px;
+  height: 480px;
+
+  left: 26%;
+  bottom: -20%;
+
+  animation: globalFogDriftC 115s ease-in-out infinite;
+  animation-delay: -45s;
+}
+
+@keyframes globalFogDriftA {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(110px, 60px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes globalFogDriftB {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate(-90px, 70px);
+    opacity: 0.65;
+  }
+}
+
+@keyframes globalFogDriftC {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(70px, -90px);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 700px) {
+  .global-fog-blob {
+    filter: blur(90px);
+  }
+
+  .global-fog-blob-1,
+  .global-fog-blob-2,
+  .global-fog-blob-3 {
+    width: 320px;
+    height: 320px;
+  }
+}

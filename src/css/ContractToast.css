@@ -1,0 +1,73 @@
+.contract-toast {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9998;
+
+  max-width: 300px;
+
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(12, 9, 23, 0.92);
+  border: 1px solid rgba(185, 121, 61, 0.3);
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  animation: contractToastIn 0.4s ease, contractToastOut 0.4s ease 4.1s;
+}
+
+.contract-toast p {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+
+  color: rgba(238, 232, 224, 0.75);
+}
+
+.contract-toast-dot {
+  flex-shrink: 0;
+
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #d3944c;
+  box-shadow: 0 0 6px rgba(211, 148, 76, 0.7);
+}
+
+@keyframes contractToastIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contractToastOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .contract-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    max-width: none;
+  }
+}

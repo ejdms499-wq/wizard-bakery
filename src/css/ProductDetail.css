@@ -1,0 +1,1059 @@
+.product-detail {
+  width: 100%;
+  min-height: 100vh;
+  padding: 130px 0 120px;
+  background: #0c0917;
+  box-sizing: border-box;
+}
+
+.product-detail * {
+  box-sizing: border-box;
+}
+
+.product-detail-inner {
+  width: min(1080px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* BREADCRUMB */
+
+.product-detail-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+
+  color: rgba(238, 232, 224, 0.3);
+}
+
+.product-detail-breadcrumb a {
+  color: rgba(238, 232, 224, 0.5);
+  text-decoration: none;
+}
+
+.product-detail-breadcrumb a:hover {
+  color: #d3944c;
+}
+
+.product-detail-breadcrumb .current {
+  color: rgba(238, 232, 224, 0.55);
+}
+
+.product-detail-back {
+  all: unset;
+  cursor: pointer;
+  margin-bottom: 40px;
+
+  display: inline-block;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+
+  color: rgba(238, 232, 224, 0.4);
+
+  transition: color 0.2s ease;
+}
+
+.product-detail-back:hover {
+  color: #d3944c;
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 70px;
+}
+
+/* IMAGE */
+
+.product-detail-image {
+  position: relative;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #17131f;
+}
+
+.product-detail-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-detail-image-zoom-trigger {
+  all: unset;
+  cursor: zoom-in;
+
+  position: relative;
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.product-detail-zoom-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(12, 9, 23, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+
+  font-size: 13px;
+  color: rgba(245, 239, 232, 0.85);
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.product-detail-image-zoom-trigger:hover .product-detail-zoom-hint {
+  opacity: 1;
+}
+
+/* IMAGE ZOOM LIGHTBOX */
+
+.image-zoom-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(4, 2, 9, 0.92);
+  cursor: zoom-out;
+}
+
+.image-zoom-full {
+  max-width: min(90vw, 720px);
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  cursor: default;
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.image-zoom-close {
+  all: unset;
+  cursor: pointer;
+
+  position: absolute;
+  top: 24px;
+  right: 28px;
+
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 200;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.image-zoom-close:hover {
+  color: #ffffff;
+}
+
+.product-detail-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  font-family: "Inter", sans-serif;
+  color: rgba(238, 232, 224, 0.3);
+}
+
+.product-detail-placeholder span {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.product-detail-placeholder small {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: rgba(238, 232, 224, 0.2);
+}
+
+.product-detail-status {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+
+  padding: 6px 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(12, 9, 23, 0.55);
+  backdrop-filter: blur(6px);
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  color: rgba(245, 239, 232, 0.85);
+}
+
+.product-detail-status.status-caution,
+.product-detail-status.status-hidden {
+  border-color: rgba(192, 82, 79, 0.6);
+  color: #e0938f;
+}
+
+.product-detail-status.status-sealed,
+.product-detail-status.status-not-for-sale,
+.product-detail-status.status-manager-only {
+  border-color: rgba(185, 121, 61, 0.6);
+  color: #d3944c;
+}
+
+/* INFO */
+
+.product-detail-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail-category {
+  margin: 0 0 14px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+
+  color: #b9793d;
+}
+
+.product-detail-en {
+  margin: 0 0 6px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  color: rgba(238, 232, 224, 0.35);
+}
+
+.product-detail-name-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.product-detail-name {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+
+  color: rgba(246, 240, 233, 0.95);
+}
+
+.product-detail-name-row .product-detail-name {
+  margin-bottom: 0;
+}
+
+.product-detail-wish {
+  all: unset;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+
+  transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.product-detail-wish:hover {
+  border-color: rgba(211, 148, 76, 0.6);
+  transform: scale(1.05);
+}
+
+.product-detail-wish-mark {
+  font-size: 15px;
+  color: rgba(238, 232, 224, 0.4);
+
+  transition: color 0.25s ease;
+}
+
+.product-detail-wish.is-wished {
+  border-color: #d3944c;
+}
+
+.product-detail-wish.is-wished .product-detail-wish-mark {
+  color: #d3944c;
+}
+
+.product-detail-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.product-detail-price {
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #f0e6da;
+}
+
+.product-detail-size {
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+
+  color: rgba(238, 232, 224, 0.35);
+}
+
+.product-detail-tagline {
+  margin: 0 0 26px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: rgba(238, 232, 224, 0.55);
+}
+
+/* TABS */
+
+.product-detail-tabs {
+  display: flex;
+  gap: 4px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  margin-bottom: 24px;
+}
+
+.product-detail-tab {
+  all: unset;
+  cursor: pointer;
+
+  padding: 10px 4px 12px;
+  margin-right: 22px;
+
+  position: relative;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.35);
+
+  transition: color 0.2s ease;
+}
+
+.product-detail-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 1px;
+
+  background: transparent;
+
+  transition: background 0.2s ease;
+}
+
+.product-detail-tab.is-active {
+  color: #f0e6da;
+}
+
+.product-detail-tab.is-active::after {
+  background: #b9793d;
+}
+
+.product-detail-tab-panel {
+  min-height: 120px;
+  margin-bottom: 30px;
+}
+
+.product-detail-description {
+  margin: 0 0 20px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+  line-height: 1.95;
+
+  color: rgba(238, 232, 224, 0.55);
+}
+
+.product-detail-description.muted {
+  color: rgba(238, 232, 224, 0.28);
+}
+
+.product-detail-section {
+  margin-bottom: 24px;
+}
+
+.product-detail-section p {
+  margin: 8px 0 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  line-height: 1.9;
+
+  color: rgba(238, 232, 224, 0.55);
+
+  white-space: pre-line;
+}
+
+.product-detail-section.warning p {
+  color: rgba(224, 147, 143, 0.85);
+}
+
+.product-detail-label {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.product-detail-section.warning .product-detail-label {
+  color: #c0524f;
+}
+
+.product-detail-taste-list {
+  margin: 8px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.product-detail-taste-list li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+
+  color: rgba(238, 232, 224, 0.55);
+}
+
+.product-detail-taste-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+
+  background: #b9793d;
+}
+
+.product-detail-ingredients {
+  color: rgba(238, 232, 224, 0.5);
+}
+
+.product-detail-allergens {
+  margin-top: 10px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 10px;
+
+  color: rgba(238, 232, 224, 0.3);
+}
+
+/* TRACE (그 후 이야기) */
+
+.product-detail-trace {
+  padding: 30px 28px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid rgba(185, 121, 61, 0.4);
+}
+
+.product-detail-trace-mark {
+  margin: 0 0 8px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  line-height: 1;
+
+  color: rgba(185, 121, 61, 0.4);
+}
+
+.product-detail-trace-text {
+  margin: 0 0 18px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+
+  color: rgba(246, 240, 233, 0.82);
+}
+
+.product-detail-trace-caption {
+  margin: 0;
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+
+  color: rgba(238, 232, 224, 0.28);
+}
+
+/* ORDER AREA */
+
+.product-detail-order {
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.product-detail-order-note {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 10px;
+  line-height: 1.7;
+
+  color: rgba(238, 232, 224, 0.3);
+}
+
+.product-detail-order-button {
+  all: unset;
+  cursor: pointer;
+
+  padding: 12px 26px;
+
+  border: 1px solid rgba(211, 148, 76, 0.55);
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  color: #f0e6da;
+
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.product-detail-order-button:hover {
+  background: rgba(211, 148, 76, 0.12);
+  border-color: #d3944c;
+}
+
+/* CONTRACT MODAL */
+
+.contract-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(4, 2, 9, 0.8);
+
+  backdrop-filter: blur(8px);
+}
+
+.contract-box {
+  position: relative;
+
+  width: min(480px, 100%);
+
+  padding: 48px 42px 42px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(185, 121, 61, 0.1),
+      transparent 40%
+    ),
+    #100c1b;
+
+  border: 1px solid rgba(211, 148, 76, 0.28);
+
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55);
+}
+
+.contract-close {
+  all: unset;
+  cursor: pointer;
+
+  position: absolute;
+  right: 18px;
+  top: 14px;
+
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contract-eyebrow {
+  margin: 0 0 16px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  color: #b9793d;
+}
+
+.contract-name {
+  margin: 0 0 24px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #f0eae2;
+}
+
+.contract-section {
+  margin-bottom: 20px;
+}
+
+.contract-section p {
+  margin: 8px 0 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  line-height: 1.9;
+
+  color: rgba(238, 232, 224, 0.6);
+
+  white-space: pre-line;
+}
+
+.contract-section.warning p {
+  color: rgba(224, 147, 143, 0.85);
+}
+
+.contract-sign-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.contract-name-input {
+  width: 100%;
+  padding: 12px 14px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+
+  color: #f0eae2;
+
+  outline: none;
+
+  transition: border-color 0.2s ease;
+}
+
+.contract-name-input::placeholder {
+  color: rgba(238, 232, 224, 0.28);
+}
+
+.contract-name-input:focus {
+  border-color: rgba(211, 148, 76, 0.5);
+}
+
+.contract-sign-button {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 0;
+
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 13px;
+
+  color: rgba(238, 232, 224, 0.75);
+
+  transition: color 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+}
+
+.contract-sign-button:hover:not(:disabled) {
+  color: #f0e6da;
+  border-color: rgba(211, 148, 76, 0.5);
+}
+
+.contract-sign-button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.contract-signed-message {
+  margin: 12px 0 0;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(211, 148, 76, 0.3);
+
+  text-align: center;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 13px;
+  line-height: 1.8;
+  font-style: italic;
+
+  color: #d3944c;
+}
+
+.contract-hidden-note {
+  margin: 0 0 4px;
+  padding: 20px 0;
+
+  text-align: center;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 13px;
+  line-height: 1.8;
+  font-style: italic;
+
+  color: rgba(238, 232, 224, 0.35);
+
+  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.contract-locked-message {
+  margin: 0;
+  padding: 30px 0;
+
+  text-align: center;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 14px;
+  line-height: 1.9;
+
+  color: rgba(238, 232, 224, 0.5);
+}
+
+/* SEAL ATTEMPT (SEALED collection only) */
+
+.seal-attempt-area {
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.seal-attempt-button {
+  all: unset;
+  cursor: pointer;
+
+  padding: 12px 26px;
+
+  border: 1px dashed rgba(192, 82, 79, 0.45);
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  color: rgba(224, 147, 143, 0.85);
+
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.seal-attempt-button:hover:not(:disabled) {
+  background: rgba(192, 82, 79, 0.08);
+  border-color: rgba(192, 82, 79, 0.7);
+}
+
+.seal-attempt-button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.seal-attempt-button.is-shaking {
+  animation: sealShake 0.4s ease;
+}
+
+@keyframes sealShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.seal-attempt-message {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.8;
+
+  color: rgba(238, 232, 224, 0.4);
+}
+
+/* NOTIFY */
+
+.notify-button {
+  all: unset;
+  cursor: pointer;
+
+  margin-top: 6px;
+  padding: 10px 22px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.6);
+
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.notify-button:hover {
+  border-color: rgba(211, 148, 76, 0.5);
+  color: #f0e6da;
+}
+
+.notify-button.is-notifying {
+  border-color: rgba(211, 148, 76, 0.6);
+  color: #d3944c;
+}
+
+.notify-message {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.8;
+
+  color: rgba(211, 148, 76, 0.7);
+}
+
+/* RELATED */
+
+.product-detail-related {
+  margin-top: 90px;
+  padding-top: 40px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.product-detail-related-label {
+  margin: 0 0 22px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  color: rgba(238, 232, 224, 0.35);
+}
+
+.product-detail-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-detail-related-card {
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-detail-related-image {
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: #17131f;
+}
+
+.product-detail-related-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.product-detail-related-card:hover .product-detail-related-image img {
+  transform: scale(1.05);
+}
+
+.product-detail-related-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+
+  color: rgba(238, 232, 224, 0.25);
+
+  text-align: center;
+  padding: 10px;
+}
+
+.product-detail-related-name {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.75);
+}
+
+.product-detail-related-price {
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+
+  color: rgba(238, 232, 224, 0.4);
+}
+
+/* EMPTY */
+
+.product-detail-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  min-height: 60vh;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+
+  color: rgba(238, 232, 224, 0.5);
+}
+
+.product-detail-empty-back {
+  all: unset;
+  cursor: pointer;
+
+  padding: 10px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+
+  color: rgba(238, 232, 224, 0.7);
+}
+
+@media (max-width: 860px) {
+  .product-detail {
+    padding: 100px 0 90px;
+  }
+
+  .product-detail-inner {
+    width: calc(100% - 40px);
+  }
+
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .product-detail-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

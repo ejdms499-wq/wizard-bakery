@@ -1,0 +1,104 @@
+@import url("https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap");
+
+.manager-note-section {
+  width: 100%;
+  padding: 135px 0 145px;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(105, 72, 38, 0.045) 0%,
+      rgba(12, 9, 23, 0) 42%
+    ),
+    #0c0917;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.manager-note-inner {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manager-note-label {
+  margin: 0 0 34px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.3em;
+
+  color: #b77a3e;
+}
+
+.manager-note-quote {
+  margin: 0 auto;
+  max-width: 1050px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: clamp(27px, 2.25vw, 40px);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.045em;
+
+  color: rgba(244, 238, 229, 0.92);
+
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.manager-note-sign {
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+
+  color: rgba(197, 137, 71, 0.62);
+}
+
+.manager-note-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+
+  background: rgba(197, 137, 71, 0.52);
+}
+
+.manager-note-name {
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .manager-note-section {
+    padding: 100px 0 105px;
+  }
+
+  .manager-note-inner {
+    width: calc(100% - 40px);
+  }
+
+  .manager-note-label {
+    margin-bottom: 26px;
+  }
+
+  .manager-note-quote {
+    max-width: 560px;
+    font-size: 24px;
+    line-height: 1.7;
+  }
+
+  .manager-note-sign {
+    margin-top: 30px;
+  }
+}

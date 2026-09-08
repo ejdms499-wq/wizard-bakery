@@ -1,0 +1,271 @@
+.brand-story {
+  width: 100%;
+  padding: 135px 0 125px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(86, 59, 125, 0.05),
+      transparent 45%
+    ),
+    #0c0917;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-sizing: border-box;
+}
+
+.brand-story * {
+  box-sizing: border-box;
+}
+
+.brand-story-inner {
+  width: min(860px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* HEAD */
+
+.brand-story-head {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.brand-story-emblem {
+  width: 56px;
+  height: 56px;
+
+  margin: 0 auto 24px;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    saturate(0.7)
+    brightness(0.92)
+    drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
+}
+
+.brand-story-eyebrow {
+  margin: 0 0 16px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+
+  color: #b9793d;
+}
+
+.brand-story-title {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.03em;
+
+  color: rgba(246, 240, 233, 0.94);
+}
+
+/* CHAPTERS */
+
+.brand-story-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  margin-bottom: 70px;
+}
+
+.brand-story-chapter {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 24px;
+
+  padding-bottom: 42px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.brand-story-chapter:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.brand-story-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+
+  color: rgba(185, 121, 61, 0.4);
+}
+
+.brand-story-chapter h3 {
+  margin: 0 0 12px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
+  color: rgba(246, 240, 233, 0.9);
+}
+
+.brand-story-chapter p {
+  margin: 0;
+
+  max-width: 560px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+  line-height: 1.95;
+
+  color: rgba(238, 232, 224, 0.5);
+}
+
+/* PULL QUOTE */
+
+.brand-story-quote {
+  text-align: center;
+  margin-bottom: 70px;
+  padding: 10px 0 0;
+}
+
+.brand-story-quote-mark {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 56px;
+  line-height: 1;
+
+  color: rgba(185, 121, 61, 0.35);
+}
+
+.brand-story-quote-text {
+  margin: 0 auto;
+
+  max-width: 480px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+
+  color: rgba(246, 240, 233, 0.92);
+}
+
+.brand-story-quote-caption {
+  margin: 18px 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  color: rgba(238, 232, 224, 0.28);
+}
+
+/* RULES */
+
+.brand-story-rules {
+  padding: 38px 44px;
+  margin-bottom: 60px;
+
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-story-rules-label {
+  margin: 0 0 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.brand-story-rules ol {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  counter-reset: rule-counter;
+}
+
+.brand-story-rules li {
+  counter-increment: rule-counter;
+
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 16px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+
+  color: rgba(238, 232, 224, 0.65);
+}
+
+.brand-story-rules li:last-child {
+  margin-bottom: 0;
+}
+
+.brand-story-rules li::before {
+  content: counter(rule-counter);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+
+  color: #b9793d;
+}
+
+/* CLOSING */
+
+.brand-story-closing {
+  margin: 0;
+
+  text-align: center;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: -0.02em;
+
+  color: rgba(238, 232, 224, 0.55);
+}
+
+@media (max-width: 720px) {
+  .brand-story {
+    padding: 90px 0 95px;
+  }
+
+  .brand-story-inner {
+    width: calc(100% - 40px);
+  }
+
+  .brand-story-title {
+    font-size: 22px;
+  }
+
+  .brand-story-chapter {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+
+  .brand-story-rules {
+    padding: 30px 24px;
+  }
+}

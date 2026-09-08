@@ -1,0 +1,343 @@
+.bakery-news-section {
+  width: 100%;
+  padding: 110px 0 120px;
+  background: #0c0917;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.bakery-news-inner {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.bakery-news-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 80px;
+
+  margin-bottom: 52px;
+}
+
+.bakery-news-eyebrow {
+  margin: 0 0 14px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+
+  color: #b9793d;
+}
+
+.bakery-news-head h2 {
+  margin: 0;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+
+  color: #eee9e2;
+}
+
+.bakery-news-copy {
+  margin: 0 0 4px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+
+  color: rgba(238, 232, 224, 0.35);
+}
+
+/* CARDS */
+
+.bakery-news-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.bakery-news-card {
+  appearance: none;
+  -webkit-appearance: none;
+
+  min-width: 0;
+  min-height: 315px;
+
+  padding: 28px 30px 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  color: inherit;
+  text-align: left;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.bakery-news-card:last-child {
+  border-right: 0;
+}
+
+.bakery-news-card:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.055),
+      rgba(255, 255, 255, 0.01)
+    );
+}
+
+.bakery-news-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.bakery-news-index {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  line-height: 1;
+
+  color: rgba(255, 255, 255, 0.06);
+}
+
+.bakery-news-date {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+
+  color: #b9793d;
+}
+
+.bakery-news-card-body {
+  margin-top: auto;
+  margin-bottom: 30px;
+}
+
+.bakery-news-label {
+  margin: 0 0 13px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.21em;
+
+  color: #ad7139;
+}
+
+.bakery-news-card h3 {
+  margin: 0 0 13px;
+
+  max-width: 260px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+
+  color: rgba(247, 242, 235, 0.87);
+}
+
+.bakery-news-summary {
+  margin: 0;
+
+  max-width: 270px;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 10px;
+  line-height: 1.8;
+
+  color: rgba(238, 232, 224, 0.34);
+}
+
+.bakery-news-card-footer {
+  padding-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.075);
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+
+  color: rgba(255, 255, 255, 0.27);
+}
+
+.bakery-news-card-arrow {
+  font-size: 15px;
+
+  transition: transform 0.25s ease;
+}
+
+.bakery-news-card:hover .bakery-news-card-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* MODAL */
+
+.bakery-news-modal-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(4, 2, 9, 0.78);
+
+  backdrop-filter: blur(10px);
+}
+
+.bakery-news-modal {
+  position: relative;
+
+  width: min(560px, 100%);
+
+  padding: 55px 58px 48px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(174, 111, 54, 0.11),
+      transparent 35%
+    ),
+    #100c1b;
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+
+  box-shadow: 0 35px 100px rgba(0, 0, 0, 0.5);
+}
+
+.bakery-news-close {
+  appearance: none;
+
+  position: absolute;
+  right: 20px;
+  top: 17px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+}
+
+.bakery-news-modal-meta {
+  margin-bottom: 25px;
+
+  display: flex;
+  gap: 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  color: #b9793d;
+}
+
+.bakery-news-modal h3 {
+  margin: 0 0 23px;
+
+  font-family: "MaruBuri", "Noto Serif KR", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.045em;
+
+  color: #f0eae2;
+}
+
+.bakery-news-modal > p {
+  margin: 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 12px;
+  line-height: 2;
+
+  color: rgba(240, 233, 225, 0.5);
+}
+
+.bakery-news-sign {
+  margin-top: 40px;
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.22em;
+
+  color: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 768px) {
+  .bakery-news-section {
+    padding: 80px 0;
+  }
+
+  .bakery-news-inner {
+    width: calc(100% - 40px);
+  }
+
+  .bakery-news-head {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .bakery-news-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .bakery-news-card {
+    min-height: 245px;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+  }
+
+  .bakery-news-modal {
+    padding: 45px 30px 38px;
+  }
+}

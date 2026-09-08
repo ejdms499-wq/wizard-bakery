@@ -1,0 +1,211 @@
+.recently-viewed {
+  width: 100%;
+  padding: 50px 0;
+
+  background: #0c0917;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-sizing: border-box;
+}
+
+.recently-viewed * {
+  box-sizing: border-box;
+}
+
+.recently-viewed-inner {
+  width: min(1080px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.recently-viewed-label {
+  margin: 0 0 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  color: rgba(238, 232, 224, 0.32);
+}
+
+.recently-viewed-strip {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  padding-bottom: 6px;
+}
+
+.recently-viewed-card {
+  flex: 0 0 110px;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.recently-viewed-image {
+  width: 110px;
+  height: 110px;
+
+  overflow: hidden;
+
+  background: #17131f;
+}
+
+.recently-viewed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.recently-viewed-card:hover .recently-viewed-image img {
+  transform: scale(1.06);
+}
+
+.recently-viewed-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.06em;
+
+  color: rgba(238, 232, 224, 0.25);
+}
+
+.recently-viewed-name {
+  margin: 8px 0 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.6);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.recently-viewed {
+  width: 100%;
+  padding: 50px 0;
+
+  background: #0c0917;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-sizing: border-box;
+}
+
+.recently-viewed * {
+  box-sizing: border-box;
+}
+
+.recently-viewed-inner {
+  width: min(1080px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.recently-viewed-label {
+  margin: 0 0 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  color: rgba(238, 232, 224, 0.32);
+}
+
+.recently-viewed-strip {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+  padding-bottom: 6px;
+}
+
+.recently-viewed-card {
+  flex: 0 0 110px;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.recently-viewed-image {
+  width: 110px;
+  height: 110px;
+
+  overflow: hidden;
+
+  background: #17131f;
+}
+
+.recently-viewed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+.recently-viewed-card:hover .recently-viewed-image img {
+  transform: scale(1.06);
+}
+
+.recently-viewed-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(185, 121, 61, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.06em;
+
+  color: rgba(238, 232, 224, 0.25);
+}
+
+.recently-viewed-name {
+  margin: 8px 0 0;
+
+  font-family: "SUIT", "Pretendard", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+
+  color: rgba(238, 232, 224, 0.6);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

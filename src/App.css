@@ -1,0 +1,11 @@
+.App {
+  width: 100%;
+
+  min-height: 100vh;
+
+  background: #0d0a18;
+}
+
+main {
+  width: 100%;
+}
