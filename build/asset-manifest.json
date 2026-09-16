@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wizard-bakery/static/css/main.5796056b.css",
+    "main.js": "/wizard-bakery/static/js/main.8c68d441.js",
+    "index.html": "/wizard-bakery/index.html",
+    "main.5796056b.css.map": "/wizard-bakery/static/css/main.5796056b.css.map",
+    "main.8c68d441.js.map": "/wizard-bakery/static/js/main.8c68d441.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5796056b.css",
+    "static/js/main.8c68d441.js"
+  ]
+}

@@ -32,7 +32,7 @@ function Hero() {
         <div className="fog-video-wrap fog-video-left">
           <video
             className="fog-video"
-            src="/video/fog.mp4"
+            src="video/fog.mp4"
             autoPlay
             muted
             loop
@@ -44,7 +44,7 @@ function Hero() {
         <div className="fog-video-wrap fog-video-right">
           <video
             className="fog-video fog-video-mirror"
-            src="/video/fog.mp4"
+            src="video/fog.mp4"
             autoPlay
             muted
             loop

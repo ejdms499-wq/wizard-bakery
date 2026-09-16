@@ -12,10 +12,22 @@ function Header() {
   const location = useLocation();
 
   const [wishCount, setWishCount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setWishCount(getWishes().length);
   }, [location.pathname]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   const scrollToId = (id) => {
     document
@@ -28,6 +40,8 @@ function Header() {
 
     const id = href.slice(1);
 
+    setMenuOpen(false);
+
     if (location.pathname === "/") {
       scrollToId(id);
     } else {
@@ -36,6 +50,8 @@ function Header() {
   };
 
   const handleLogoClick = (event) => {
+    setMenuOpen(false);
+
     if (location.pathname === "/") {
       event.preventDefault();
       scrollToId("top");
@@ -100,7 +116,67 @@ function Header() {
 
         </nav>
 
+
+        <button
+          type="button"
+          className={`header-menu-toggle ${menuOpen ? "is-open" : ""}`}
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </div>
+
+
+      <div
+        className={`header-mobile-overlay ${menuOpen ? "is-open" : ""}`}
+        onClick={() => setMenuOpen(false)}
+      />
+
+      <nav className={`header-mobile-nav ${menuOpen ? "is-open" : ""}`}>
+
+        {nav.map((menu) =>
+          menu.href.startsWith("#") ? (
+            <a
+              key={menu.id}
+              href={menu.href}
+              className="header-mobile-link"
+              onClick={(event) =>
+                handleHashNav(event, menu.href)
+              }
+            >
+              {menu.name}
+            </a>
+          ) : (
+            <Link
+              key={menu.id}
+              to={menu.href}
+              className="header-mobile-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {menu.name}
+            </Link>
+          )
+        )}
+
+        <Link
+          to="/wishes"
+          className="header-mobile-link header-mobile-wish"
+          onClick={() => setMenuOpen(false)}
+        >
+          새겨둔 소원
+          {wishCount > 0 && (
+            <span className="header-nav-wish-count">
+              {wishCount}
+            </span>
+          )}
+        </Link>
+
+      </nav>
 
     </header>
   );

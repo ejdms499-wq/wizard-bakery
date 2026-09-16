@@ -829,6 +829,14 @@
   }
 
 
+  .hero-center-light {
+    width: 480px;
+    height: 380px;
+
+    filter: blur(26px);
+  }
+
+
   .fog-video-wrap {
     width: 70%;
 
@@ -869,9 +877,9 @@
 
 
   .hero-tagline {
-    font-size: 8px;
+    font-size: 10px;
 
-    letter-spacing: 0.27em;
+    letter-spacing: 0.2em;
   }
 
 
@@ -886,7 +894,8 @@
 
 
   .hero-manager {
-    width: 340px;
+    width: 100%;
+    max-width: 340px;
 
     flex-wrap: wrap;
 

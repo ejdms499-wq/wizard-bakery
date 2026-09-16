@@ -164,21 +164,44 @@ function ProductDetail() {
     setIsContractOpen(false);
   };
 
-  const handleSign = () => {
+  const handleSign = async () => {
     if (!signatureName.trim() || isSigning) {
       return;
     }
 
     setIsSigning(true);
 
-    setTimeout(() => {
+    try {
+      const contractData = {
+        productId: product.id,
+        productName: product.name,
+        signatureName: signatureName.trim(),
+        signedAt: new Date().toISOString(),
+      };
+
+      const res = await fetch("http://localhost:4000/api/contracts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(contractData),
+      });
+
+      if (!res.ok) {
+        throw new Error("서버 오류");
+      }
+
+      const data = await res.json();
+      console.log("서버 응답 id:", data.id);
+
       localStorage.setItem(CONTRACT_DATE_KEY, getTodayString());
       localStorage.setItem(CONTRACT_NAME_KEY, signatureName.trim());
 
       setSignedName(signatureName.trim());
-      setIsSigning(false);
       setIsSigned(true);
-    }, 1300);
+    } catch (err) {
+      console.error("계약서 전송 실패:", err.message);
+    } finally {
+      setIsSigning(false);
+    }
   };
 
   const handleSealAttempt = () => {
@@ -430,7 +453,7 @@ function ProductDetail() {
                     {product.traces && product.traces.length > 0 ? (
                       <div className="product-detail-trace">
                         <p className="product-detail-trace-mark">
-                          “
+                          "
                         </p>
 
                         <p className="product-detail-trace-text">

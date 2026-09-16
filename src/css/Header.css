@@ -163,6 +163,133 @@
 
 
 /* ===============================
+   MOBILE MENU TOGGLE (햄버거)
+================================ */
+
+.header-menu-toggle {
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  width: 32px;
+  height: 32px;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  z-index: 200;
+}
+
+.header-menu-toggle span {
+  display: block;
+
+  width: 20px;
+  height: 1px;
+
+  background: #f4eee3;
+
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.header-menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.header-menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ===============================
+   MOBILE NAV DRAWER
+================================ */
+
+.header-mobile-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 150;
+
+  background: rgba(5, 3, 10, 0.6);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.header-mobile-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 78%;
+  max-width: 320px;
+  height: 100vh;
+
+  z-index: 160;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 96px 28px 40px;
+
+  background: #100c1c;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+
+  transform: translateX(100%);
+  transition: transform 0.32s ease;
+
+  overflow-y: auto;
+}
+
+.header-mobile-nav.is-open {
+  transform: translateX(0);
+}
+
+.header-mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 16px 4px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  color: rgba(247, 241, 230, 0.75);
+
+  text-decoration: none;
+}
+
+.header-mobile-link:active {
+  color: #f6efe2;
+}
+
+.header-mobile-wish {
+  color: #d3944c;
+}
+
+
+/* ===============================
    MOBILE
 ================================ */
 
@@ -174,6 +301,10 @@
 
   .header-nav {
     display: none;
+  }
+
+  .header-menu-toggle {
+    display: flex;
   }
 
 }
